@@ -15,9 +15,9 @@
   })
 
   cw1.addEventListener("click", function() {
-  //dodanie loading Com2_1.2
+    //dodanie loading Com2_1.2
     answer.innerHTML = "Loading...";
-    
+    //Com2_1.1
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(posts => {
@@ -30,7 +30,19 @@
   })
 
   cw2.addEventListener("click", function() {
-    //TODO
+
+    //Com2_1.3
+    answer.innerHTML = "Loading...";
+
+    fetch('https://jsonplaceholder.typicode.com/posts/5')
+      .then(response => response.json())
+      .then(post => {
+        const html = `
+          <h3>${post.title}</h3>
+          <p>${post.body}</p>
+          <hr>`;
+        answer.innerHTML = html;
+      })
   })
 
   cw3.addEventListener("click", function() {
