@@ -46,7 +46,25 @@
   })
 
   cw3.addEventListener("click", function() {
-    //TOD0
+    //Com2_1.4
+    answer.innerHTML = "Processing...";
+
+    const newPost = {
+      title: "NOWY POST",
+      body: "djwndaj bddowdbuado adoidmaql kdandoadhd mnjw",
+      userId: 1
+    };
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newPost)
+    })
+      .then(response => response.json())
+      .then(post => {
+
+        answer.innerHTML = `Dodano nowy post o ID = ${post.id}`;
+      })
   })
 
   cw4.addEventListener("click", function() {
